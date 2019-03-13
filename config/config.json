@@ -1,16 +1,26 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "root",
     "port": 3306,
     "database": "Adult_Pokemon_db",
+=======
+    "password": "HIMYM2014$",
+    "database": "project2_db",
+>>>>>>> master
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
+<<<<<<< HEAD
     "password": "root",
     "database": "Adult_Pokemon_db",
+=======
+    "password": "HIMYM2014$",
+    "database": "testdb",
+>>>>>>> master
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
