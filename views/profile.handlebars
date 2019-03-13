@@ -1,67 +1,94 @@
 <!--Short Description Row-->
-    <div class="row">
-      <div class="col-md text-center">
-        <h3 style="font-family: 'Cutive', serif;">Here are your weekly quests.</h3>
-      </div>
-    </div>
+<div class="row">
+  <div class="col-md text-center">
+    <h3 style="font-family: 'Cutive', serif;">Here are your weekly quests.</h3>
+  </div>
+</div>
 
-    <!--Challenges Accordian-->
-    <div class="row mt-4">
-      <div class="col-md text-center">
-        <div class="accordion" id="currentQuests">
+<!--Challenges Accordian-->
+<div class="row mt-4">
+  <div class="col-md text-center">
+    <div class="accordion" id="currentQuests">
 
-          {{#each quest}}
-          {{#unless completed}}
-          <div class="card">
-            <div class="card-header" id= '"challenge" + {{quest.id}}'>
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target='"#" + {{quest.id}}'
-                  aria-expanded="false" aria-controls="collapseOne">
-                  {{quest.questName}}
-                </button>
-              </h2>
-            </div>
+      {{#each quest}}
+      {{#unless completed}}
+      <div class="card">
+        <div class="card-header" id='"challenge" + {{quest.id}}'>
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target='"#" + {{quest.id}}'
+              aria-expanded="false" aria-controls="collapseOne">
+              {{quest.questName}}
+            </button>
+          </h2>
+        </div>
 
-            <div id={{quest.id}} class="collapse" aria-labelledby='"challenge" + {{quest.id}}' data-parent="#currentQuests">
-              <div class="card-body">
-                {{quest.questDescribe}}
-              </div>
-            </div>
+        <div id={{quest.id}} class="collapse" aria-labelledby='"challenge" + {{quest.id}}' data-parent="#currentQuests">
+          <div class="card-body">
+            {{quest.questDescribe}}
           </div>
-          {{/unless}}
-          {{/each}}
         </div>
       </div>
+      {{/unless}}
+      {{/each}}
     </div>
+  </div>
+</div>
 
-    <!--Completed Challenges Row-->
-    <div class="row mt-4">
-      <div class="col-md text-center">
-        <h3 style="font-family: 'Cutive', serif;">Completed Quests</h3>
-      </div>
-    </div>
+<!--Completed Challenges Row-->
+<div class="row mt-4">
+  <div class="col-md text-center">
+    <h3 style="font-family: 'Cutive', serif;">Completed Quests</h3>
+  </div>
+</div>
 
-    <!--Completed Challenges Accordian-->
-    <div class="row mt-4">
-      <div class="col-md text-center">
-        <div class="accordion" id="completedQuests">
-
-          <div class="card">
-            <div class="card-header" id='"completedChallenge" + {{quest.id}}'>
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target='"#" + {{quest.id}}'
-                  aria-expanded="false" aria-controls='"completedChallenge" + {{quest.id}}'>
-                  {{quest.questName}}
-                </button>
-              </h2>
-            </div>
-            <div id={{quest.id}} class="collapse" aria-labelledby='"completedChallenge" + {{quest.id}}' data-parent="#completedQuests">
-              <div class="card-body">
-                {{quest.questDescribe}}
-              </div>
-            </div>
+<!--Completed Challenges Accordian-->
+<div class="row mt-4">
+  <div class="col-md text-center">
+    <div class="accordion" id="completedQuests">
+      {{#each quest}}
+      {{#if completed}}
+      <div class="card">
+        <div class="card-header" id='"completedChallenge" + {{quest.id}}'>
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target='"#" + {{quest.id}}'
+              aria-expanded="false" aria-controls='"completedChallenge" + {{quest.id}}'>
+              {{quest.questName}}
+            </button>
+          </h2>
+        </div>
+        <div id={{quest.id}} class="collapse" aria-labelledby='"completedChallenge" + {{quest.id}}' data-parent="#completedQuests">
+          <div class="card-body">
+            {{quest.questDescribe}}
           </div>
-
+          <div class="card-footer">
+            <button type="button" class="btn btn-success" name="complete" id='"complete" + {{quest.id}}'>Completed!</button>
+          </div>
         </div>
       </div>
+      {{/if}}
+      {{/each}}
+
     </div>
+  </div>
+</div>
+
+<!--Rewards Modal-->
+<div class="modal" tabindex="-1" role="dialog" id="rewards-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Rewards</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{#each quest}}
+        <!-- Need logic to see if all 3 challenges are complete -->
+        <!-- Else diplay Finish Text -->
+        <h2>Complete all Challenges to Earn your reward!</h2>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
