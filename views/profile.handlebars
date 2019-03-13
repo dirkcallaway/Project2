@@ -1,0 +1,67 @@
+<!--Short Description Row-->
+    <div class="row">
+      <div class="col-md text-center">
+        <h3 style="font-family: 'Cutive', serif;">Here are your weekly quests.</h3>
+      </div>
+    </div>
+
+    <!--Challenges Accordian-->
+    <div class="row mt-4">
+      <div class="col-md text-center">
+        <div class="accordion" id="currentQuests">
+
+          {{#each quest}}
+          {{#unless completed}}
+          <div class="card">
+            <div class="card-header" id= '"challenge" + {{quest.id}}'>
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target='"#" + {{quest.id}}'
+                  aria-expanded="false" aria-controls="collapseOne">
+                  {{quest.questName}}
+                </button>
+              </h2>
+            </div>
+
+            <div id={{quest.id}} class="collapse" aria-labelledby='"challenge" + {{quest.id}}' data-parent="#currentQuests">
+              <div class="card-body">
+                {{quest.questDescribe}}
+              </div>
+            </div>
+          </div>
+          {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!--Completed Challenges Row-->
+    <div class="row mt-4">
+      <div class="col-md text-center">
+        <h3 style="font-family: 'Cutive', serif;">Completed Quests</h3>
+      </div>
+    </div>
+
+    <!--Completed Challenges Accordian-->
+    <div class="row mt-4">
+      <div class="col-md text-center">
+        <div class="accordion" id="completedQuests">
+
+          <div class="card">
+            <div class="card-header" id='"completedChallenge" + {{quest.id}}'>
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target='"#" + {{quest.id}}'
+                  aria-expanded="false" aria-controls='"completedChallenge" + {{quest.id}}'>
+                  {{quest.questName}}
+                </button>
+              </h2>
+            </div>
+            <div id={{quest.id}} class="collapse" aria-labelledby='"completedChallenge" + {{quest.id}}' data-parent="#completedQuests">
+              <div class="card-body">
+                {{quest.questDescribe}}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
