@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Cutive" rel="stylesheet">
   <!--Custom CSS Link-->
   <link rel="stylesheet" href="styles/styles.css">
+
   <title>Local Quest</title>
 </head>
 
@@ -85,7 +86,6 @@
                 </button>
               </h2>
             </div>
-
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
@@ -94,7 +94,7 @@
                 shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
                 proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
                 aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-              </div>
+               </div>
             </div>
           </div>
           <div class="card">
@@ -175,6 +175,20 @@
         </div>
       </div>
     </div>
+    <br>
+    <br>
+    <!-- create unless statement w/handlebars (or REACT)
+    function mapFunction(location){
+      if (location === Broomfield ) {
+        return broomfieldMap
+      }else{
+        return fortcollinsMap
+      };
+      } -->
+    <div id ="broomfieldMap"></div>
+    <br>
+    <!-- <div id ="fortcollinsMap"></div> -->
+  </div>
 
 
     <!--Footer-->
@@ -258,9 +272,13 @@
       </div>
     </div>
 
-  </div>
+
 
   <!-- Optional JavaScript -->
+  <script type="text/javascript" src="js/broomfieldMaps.js"></script>
+  <!-- <script type="text/javascript" src="js/fortcollinsMaps.js"></script> -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7XfL1st3RGGEm2nmKVB43vVzc8pOo-Ps&callback=initMap">
+    </script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
