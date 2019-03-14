@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 $(".firstlogin").on("submit", function(event) {
   // Make sure to preventDefault on a submit event.
   event.preventDefault();
