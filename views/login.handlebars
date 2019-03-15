@@ -26,7 +26,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form action="/profile">
               <div class="form-group">
                 <label for="username">User Name</label>
                 <input type="email" class="form-control" id="username" placeholder="Enter username">
@@ -35,7 +35,7 @@
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" placeholder="Password">
               </div>
-              <button type="submit" class="btn btn-primary login">Login</button>
+              <button type="submit" class="btn btn-primary">Login</button>
             </form>
           </div>
           <div class="modal-footer">
@@ -57,7 +57,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form action="/profile">
               <div class="form-group">
                 <label for="username">User Name</label>
                 <input type="email" class="form-control" id="username" placeholder="Enter username">
@@ -109,4 +109,5 @@
     $('#login-modal').modal('hide');
     $('#signup-modal').modal('toggle');
   });
+
 </script>

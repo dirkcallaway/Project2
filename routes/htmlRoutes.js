@@ -3,14 +3,11 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Quest.findAll({ where: { location: req.body.location } }).then(function(
-      dbExamples
-    ) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    res.render("login");
+  });
+
+  app.get("/profile", function(req, res) {
+    res.render("profile");
   });
 
   // Load example page and pass in an example by id
