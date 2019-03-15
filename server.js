@@ -1,4 +1,6 @@
 require("dotenv").config();
+console.log(process.env.DB_PASS);
+console.log(process.env.API_KEY);
 var express = require("express");
 var exphbs = require("express-handlebars");
 
