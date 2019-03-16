@@ -92,3 +92,16 @@
     </div>
   </div>
 </div>
+<script>
+  //Login Button Click
+  $(".login").on("click", function () {
+    $('#signup-modal').modal('hide');
+    $('#login-modal').modal('toggle');
+  });
+
+  //Sign Up Button Click
+  $(".signup").on("click", function () {
+    $('#login-modal').modal('hide');
+    $('#signup-modal').modal('toggle');
+  });
+</script>

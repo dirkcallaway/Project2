@@ -1,21 +1,29 @@
 {
   "development": {
+<<<<<<< HEAD
     "username": "root",
     "password": "BeckettEv1&Min@",
     "database": "project2_db",
     "host": "localhost",
     "dialect": "mysql"
+=======
+      "username": "root",
+      "password": "root",
+      "database": "project2_db",
+      "host": "localhost",
+      "dialect": "mysql"
+>>>>>>> master
   },
   "test": {
-    "username": "root",
-    "password": "root",
-    "database": "project2_db",
-    "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
+      "username": "root",
+      "password": "root",
+      "database": "project2_db",
+      "host": "localhost",
+      "dialect": "mysql",
+      "logging": false
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
+      "use_env_variable": "JAWSDB_URL",
+      "dialect": "mysql"
   }
 }
