@@ -1,6 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     UserName: DataTypes.STRING,
+    password: DataTypes.STRING,
+    Location: DataTypes.STRING,
     questComplete: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
