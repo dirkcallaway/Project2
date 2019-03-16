@@ -4,20 +4,20 @@ module.exports = function(app) {
   // Get all examples
   app.get("/api/user", function(req, res) {
     db.User.findAll({
-      include:[db.quest]
+      include: [db.quest]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
-// Here we add an "include" property to our options in our findOne queryget
-  app.get("/api/user/:id", function(req,res){
+  // Here we add an "include" property to our options in our findOne queryget
+  app.get("/api/user/:id", function(req, res) {
     db.User.findOne({
-      where:{
+      where: {
         id: req.params.id
       },
       include: [db.Quest]
-    }).then(function(dbUser){
-      res.json(dbUser)
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
   // Create a new user
@@ -30,10 +30,10 @@ module.exports = function(app) {
   // Delete an user by id
   app.delete("/api/user/:id", function(req, res) {
     db.User.destroy({
-       where: {
-          id: req.params.id
-         }
-       }).then(function(dbUser) {
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
