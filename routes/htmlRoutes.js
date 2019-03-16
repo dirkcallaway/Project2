@@ -7,11 +7,11 @@ module.exports = function(app) {
   });
 
   app.get("/profile", function(req, res) {
-    db.Quest.findAll({}).then(function(quest) {
-      console.log(quest);
-      res.render("profile", {
-        quest: quest
-      });
+    db.Quest.findAll({}).then(function(data) {
+      var hbsobj = {
+        quest: data
+      };
+      res.render("profile", hbsobj);
     });
   });
 
