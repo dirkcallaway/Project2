@@ -7,7 +7,12 @@ module.exports = function(app) {
   });
 
   app.get("/profile", function(req, res) {
-    res.render("profile");
+    db.Quest.findAll({}).then(function(quest) {
+      console.log(quest);
+      res.render("profile", {
+        quest: quest
+      });
+    });
   });
 
   // Load example page and pass in an example by id

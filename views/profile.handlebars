@@ -11,9 +11,9 @@
     <div class="accordion" id="currentQuests">
 
       {{#each quest}}
-      {{#unless completed}}
+      {{!-- {{#unless completed}} --}}
       <div class="card">
-        <div class="card-header" id='"challenge" + {{quest.id}}'>
+        <div class="card-header" id='"challenge" + {{this.id}}'>
           <h2 class="mb-0">
             <button class="btn btn-link" type="button" data-toggle="collapse" data-target='"#" + {{quest.id}}'
               aria-expanded="false" aria-controls="collapseOne">
@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      {{/unless}}
+      {{!-- {{/unless}} --}}
       {{/each}}
     </div>
   </div>
