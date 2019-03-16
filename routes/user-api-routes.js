@@ -21,7 +21,7 @@ module.exports = function(app) {
     });
   });
   // Create a new user
-  app.post("/api/user", function(req, res) {
+  app.post("/api/createuser", function(req, res) {
     db.User.create(req.body).then(function(dbUser) {
       res.json(dbUser);
     });

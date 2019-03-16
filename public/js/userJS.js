@@ -1,7 +1,10 @@
 // AJAX for User
-$(".firstlogin").on("submit", function(event) {
-  // Make sure to preventDefault on a submit event.
+// $(function() {
+$(".create-form").on("submit", function(event) {
   event.preventDefault();
+
+  alert("it worked");
+  // Make sure to preventDefault on a submit event.
 
   var newUser = {
     userName: $("#username")
@@ -14,12 +17,12 @@ $(".firstlogin").on("submit", function(event) {
   };
 
   // Send the POST request.
-  $.ajax("/api/user", {
+  $.ajax("/api/createuser", {
     type: "POST",
     data: newUser
   }).then(function() {
     console.log(newUser);
     // Reload the page to get the updated list
-    location.reload();
   });
 });
+// });
