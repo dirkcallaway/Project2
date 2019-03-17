@@ -12,10 +12,10 @@
   <!--Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Cutive" rel="stylesheet">
   <!--Custom CSS Link-->
-  <link rel="stylesheet" href="../../node_modules/bulma/css/bulma.css">
-  <link rel="stylesheet" href="../../public/styles/styles.css">
-  <link rel="stylesheet" href="../../public/js/broomfieldMaps.js">
-  <link rel="stylesheet" href="../../public/js/fortcollinsMaps.js">
+
+  <link rel="stylesheet" type="text/css" href="../../public/styles/styles.css">
+  {{!-- <link rel="stylesheet" href="../../public/js/broomfieldMaps.js"> --}}
+  {{!-- <link rel="stylesheet" href="../../public/js/fortcollinsMaps.js"> --}}
   <title>Local Quest</title>
 </head>
 <body>
@@ -34,7 +34,11 @@
 
     <!-- Optional JavaScript -->
 
-
+     <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7XfL1st3RGGEm2nmKVB43vVzc8pOo-Ps&callback=initMap">
+    </script>
+    <script type="text/javascript" src="../../public/js/broomfieldMaps.js"></script>
+    {{!-- <script type="text/javascript" src="../../public/js/fortcollinsMaps.js"></script> --}}
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"></script>
