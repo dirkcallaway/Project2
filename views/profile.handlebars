@@ -73,7 +73,7 @@
 </div>
 
 <!--Rewards Modal-->
-{{!-- <div class="modal" tabindex="-1" role="dialog" id="rewards-modal">
+<div class="modal" tabindex="-1" role="dialog" id="rewards-modal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -84,29 +84,17 @@
       </div>
       <div class="modal-body">
         {{#each quest}}
-        <!-- Need logic to see if all 3 challenges are complete -->
-        <!-- Else diplay Finish Text -->
+      {{!-- Need logic to see if all 3 challenges are complete
+        Else diplay Finish Text --}}
         <h2>Complete all Challenges to Earn your reward!</h2>
         {{/each}}
       </div>
     </div>
   </div>
-</div> --}}
+</div>
 <div class ="container">
 <div id ="broomfieldMap"></div>
- {{!-- <div id ="fortcollinsMap">Fort Collins Map</div> --}}
-    <br>
-    </div>
-<script>
-  //Login Button Click
-  $(".login").on("click", function () {
-    $('#signup-modal').modal('hide');
-    $('#login-modal').modal('toggle');
-  });
+{{!-- <div id ="fortcollinsMap">Fort Collins Map</div> --}}
+<br>
+</div>
 
-  //Sign Up Button Click
-  $(".signup").on("click", function () {
-    $('#login-modal').modal('hide');
-    $('#signup-modal').modal('toggle');
-  });
-</script>
