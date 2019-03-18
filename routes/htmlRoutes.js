@@ -13,13 +13,13 @@ module.exports = function(app) {
     db.User.findOne({
       where: { UserName: username }
     }).then(function(data) {
-      console.log(data);
       //Checks to see if there is a username in the DB
-      if ((data = !null)) {
-        console.log(data.id);
+      if (data !== null) {
+        console.log(data);
         //Checks to see if the password matches
         if (data.password === password) {
           //if password matches it pulls the users quests
+          console.log("Inside func pass:" + password);
           db.Quest.findAll({}).then(function(data) {
             var hbsobj = {
               quest: data
