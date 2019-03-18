@@ -35,6 +35,7 @@ $(".createForm").on("submit", function(event) {
         // Reload the page to get the updated list
         // location.reload();
         console.log(data);
+        location.reload();
       });
     })
     .catch(function(err) {
@@ -54,7 +55,7 @@ $(".complete").on("click", function() {
     type: "PUT",
     data: newComplete
   }).then(function() {
-    console.log("changed devoured to", newDevoured);
+    console.log(newComplete);
     // Reload the page to get the updated list
     location.reload();
   });
