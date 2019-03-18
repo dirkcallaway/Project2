@@ -11,7 +11,7 @@
     <div class="accordion" id="currentQuests">
 
       {{#each quest}}
-      {{!-- {{#unless completed}} --}}
+      {{#unless completed}} 
       <div class="card">
         <div class="card-header" id='challenge{{id}}'>
           <h2 class="mb-0">
@@ -26,9 +26,12 @@
           <div class="card-body">
             {{questDescribe}}
           </div>
+          <div class="card-footer">
+            <button type="button" class="btn btn-success complete" name="complete" data-id="{{id}}">Completed!</button>
+          </div>
         </div>
       </div>
-      {{!-- {{/unless}} --}}
+      {{/unless}} 
       {{/each}}
     </div>
   </div>
@@ -48,21 +51,19 @@
       {{#each quest}}
       {{#if completed}}
       <div class="card">
-        <div class="card-header" id='"completedChallenge" + {{quest.id}}'>
+        <div class="card-header" id='completedChallenge{{id}}'>
           <h2 class="mb-0">
             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target='"#" + {{quest.id}}'
-              aria-expanded="false" aria-controls='"completedChallenge" + {{quest.id}}'>
-              {{quest.questName}}
+              aria-expanded="false" aria-controls='completedChallenge{{id}}'>
+              {{questName}}
             </button>
           </h2>
         </div>
-        <div id={{quest.id}} class="collapse" aria-labelledby='"completedChallenge" + {{quest.id}}' data-parent="#completedQuests">
+        <div id={{id}} class="collapse" aria-labelledby='completedChallenge{{id}}' data-parent="#completedQuests">
           <div class="card-body">
-            {{quest.questDescribe}}
+            {{questDescribe}}
           </div>
-          <div class="card-footer">
-            <button type="button" class="btn btn-success" name="complete" id='"complete" + {{quest.id}}'>Completed!</button>
-          </div>
+          
         </div>
       </div>
       {{/if}}
@@ -92,6 +93,19 @@
     </div>
   </div>
 </div>
+{{!-- <script>
+  //Login Button Click
+  $(".login").on("click", function () {
+    $('#signup-modal').modal('hide');
+    $('#login-modal').modal('toggle');
+  });
+
+  //Sign Up Button Click
+  $(".signup").on("click", function () {
+    $('#login-modal').modal('hide');
+    $('#signup-modal').modal('toggle');
+  });
+</script> --}}
 <div class ="container">
 <div id ="broomfieldMap"></div>
 {{!-- <div id ="fortcollinsMap">Fort Collins Map</div> --}}

@@ -7,10 +7,14 @@ module.exports = function(app) {
   });
 
   app.get("/profile", function(req, res) {
-    db.Quest.findAll({}).then(function(data) {
+    db.Users.findAll({
+      // where: { UserName: "shelby@hotmail.com" },
+      include: [db.Quest]
+    }).then(function(data) {
       var hbsobj = {
         quest: data
       };
+      console.log(data);
       res.render("profile", hbsobj);
     });
   });
