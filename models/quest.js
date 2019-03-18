@@ -2,7 +2,11 @@ module.exports = function(sequelize, DataTypes) {
   var Quest = sequelize.define("Quest", {
     questName: DataTypes.STRING,
     questDescribe: DataTypes.TEXT,
-    Location: DataTypes.STRING
+    Location: DataTypes.STRING,
+    completed: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   });
   Quest.associate = function(models) {
     // We're saying that a Post should belong to an Author

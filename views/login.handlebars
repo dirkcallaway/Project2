@@ -27,16 +27,16 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="/profile">
+        <form action = "/profile/{{UserName}}">
           <div class="form-group">
             <label for="username">User Name</label>
-            <input type="email" class="form-control" id="username" placeholder="Enter username">
+            <input type="email" class="form-control" id="UserName" placeholder="Enter username">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Password">
           </div>
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit"  class="btn btn-primary userLogin">Login</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -58,25 +58,25 @@
         </button>
       </div>
       <div class="modal-body">
-        {{!-- action="/profile" --}}
-        <form class="create-form">
+        {{!-- action = action = "/createusers" method="POST"--}}
+          <form class ="createForm" > 
           <div class="form-group">
             <label for="username">User Name</label>
-            <input type="email" class="form-control" id="username" placeholder="Enter username">
+            <input type="username" name = "username" class="form-control" id="Firstusername" placeholder="Enter username">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
+            <input type="password" name = "password"class="form-control" id="Firstpassword" placeholder="Password">
           </div>
           <div class="form-group">
             <label for="password-verify">Password</label>
             <input type="password" class="form-control" id="password-verify" placeholder="Verify Password">
           </div>
-          <select class="form-control" id = "Location">
-            <option value = "Ft. Collins">Ft. Collins</option>
-            <option value = "Erie/Broomfield">Erie/Broomfield</option>
+          <select class="form-control" id = "FirstLocation">
+            <option name="Fort Collins" value = "Fort Collins">Fort Collins</option>
+            <option name= "Broomfield" value = "Broomfield">Broomfield</option>
           </select>
-          <button type="submit" class="btn btn-primary login mt-3" id = "firstlogin">Login</button>
+          <button  class="btn btn-primary mt-3" id = "firstlogin">Login</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -92,26 +92,3 @@
  <div id ="fortcollinsMap"></div>
     <br>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-  crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-  crossorigin="anonymous"></script>
-</body>
-
-<script>
-  //Login Button Click
-  $(".login").on("click", function () {
-    $('#signup-modal').modal('hide');
-    $('#login-modal').modal('toggle');
-  });
-
-  //Sign Up Button Click
-  $(".signup").on("click", function () {
-    $('#login-modal').modal('hide');
-    $('#signup-modal').modal('toggle');
-  });
-</script>
