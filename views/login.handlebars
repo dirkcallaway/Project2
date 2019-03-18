@@ -59,7 +59,7 @@
       </div>
       <div class="modal-body">
         {{!-- action = action = "/createusers" method="POST"--}}
-          <form class ="createForm" > 
+          <form class ="createForm"  action = "/profile"> 
           <div class="form-group">
             <label for="username">User Name</label>
             <input type="username" name = "username" class="form-control" id="Firstusername" placeholder="Enter username">
@@ -76,7 +76,7 @@
             <option name="Fort Collins" value = "Fort Collins">Fort Collins</option>
             <option name= "Broomfield" value = "Broomfield">Broomfield</option>
           </select>
-          <button  class="btn btn-primary mt-3" id = "firstlogin">Login</button>
+          <button type= "submit" class="btn btn-primary mt-3" id = "firstlogin">Login</button>
         </form>
       </div>
       <div class="modal-footer">

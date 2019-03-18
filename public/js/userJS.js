@@ -3,7 +3,6 @@
 $(".createForm").on("submit", function(event) {
   event.preventDefault();
   // Make sure to preventDefault on a submit event.
-  alert("hello");
   var newUser = {
     UserName: $("#Firstusername")
       .val()
