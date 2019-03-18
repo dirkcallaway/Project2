@@ -6,18 +6,50 @@ module.exports = function(app) {
     res.render("login");
   });
 
-  app.get("/profile", function(req, res) {
-    db.Users.findAll({
-      // where: { UserName: "shelby@hotmail.com" },
-      include: [db.Quest]
+  app.post("/profile", function(req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    console.log(username, password);
+    db.User.findOne({
+      where: { UserName: username }
     }).then(function(data) {
-      var hbsobj = {
-        quest: data
-      };
       console.log(data);
-      res.render("profile", hbsobj);
+      //Checks to see if there is a username in the DB
+      if ((data = !null)) {
+        console.log(data.id);
+        //Checks to see if the password matches
+        if (data.password === password) {
+          //if password matches it pulls the users quests
+          db.Quest.findAll({}).then(function(data) {
+            var hbsobj = {
+              quest: data
+            };
+            res.render("profile", hbsobj);
+          });
+          //if password doesn't match it renders the login page again
+        } else {
+          res.render("login");
+        }
+        //if there isn't a user match in db sends back to login page
+      } else {
+        res.render("login");
+      }
     });
   });
+
+  //We will need this logic later maybe?
+  // app.get("/profile", function(req, res) {
+  //   db.Users.findOne({
+  //     // where: { UserName: "shelby@hotmail.com" },
+  //     include: [db.Quest]
+  //   }).then(function(data) {
+  //     var hbsobj = {
+  //       quest: data
+  //     };
+  //     console.log(data);
+  //     res.render("profile", hbsobj);
+  //   });
+  // });
 
   // Load example page and pass in an example by id
   app.get("/user/:id", function(req, res) {
