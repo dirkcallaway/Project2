@@ -1,7 +1,21 @@
 <!--Short Description Row-->
+  
+   
+<div class="dropdown">
+  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Delete User
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    {{#each User}}
+    <a class="dropdown-item delete" data-id = "{{id}}">{{UserName}}</a>
+    {{/each}}
+  </div>
+</div>
+<br>
+
 <div class="row">
   <div class="col-md text-center">
-    <h3>Shop Local. Complete Quests. Earn Rewards.</h3>
+    <h3 style = "color:azure;">Shop Local. Complete Quests. Earn Rewards.</h3>
   </div>
 </div>
 

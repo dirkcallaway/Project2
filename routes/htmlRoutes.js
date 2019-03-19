@@ -3,7 +3,12 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    res.render("login");
+    db.User.findAll({}).then(function(data) {
+      var hbdobj = {
+        User: data
+      };
+      res.render("login", hbdobj);
+    });
   });
 
   app.post("/profile", function(req, res) {
