@@ -1,4 +1,6 @@
-<!--Short Description Row-->
+
+
+    <!--Short Description Row-->
 <div class="row">
   <div class="col-md text-center">
     <h3 style="font-family: 'Cutive', serif;">Here are your weekly quests.</h3>
@@ -11,7 +13,7 @@
     <div class="accordion" id="currentQuests">
 
       {{#each quest}}
-      {{#unless completed}} 
+      {{#unless completed}}
       <div class="card">
         <div class="card-header" id='challenge{{id}}'>
           <h2 class="mb-0">
@@ -31,7 +33,7 @@
           </div>
         </div>
       </div>
-      {{/unless}} 
+      {{/unless}}
       {{/each}}
     </div>
   </div>
@@ -63,16 +65,13 @@
           <div class="card-body">
             {{questDescribe}}
           </div>
-          
+          </div>
         </div>
-      </div>
       {{/if}}
       {{/each}}
-
     </div>
   </div>
 </div>
-
 <!--Rewards Modal-->
 <div class="modal" tabindex="-1" role="dialog" id="rewards-modal">
   <div class="modal-dialog" role="document">
@@ -93,6 +92,9 @@
     </div>
   </div>
 </div>
+<div id="broomfieldMap"></div>
+
+
 {{!-- <script>
   //Login Button Click
   $(".login").on("click", function () {
@@ -106,9 +108,4 @@
     $('#signup-modal').modal('toggle');
   });
 </script> --}}
-<div class ="container">
-<div id ="broomfieldMap"></div>
-{{!-- <div id ="fortcollinsMap">Fort Collins Map</div> --}}
-<br>
-</div>
 
