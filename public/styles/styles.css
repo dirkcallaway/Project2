@@ -1,4 +1,10 @@
 
+.bg {
+  background-image: url("../images/background.jpg");
+background-repeat: no-repeat;
+height: 100%;
+  background-size: cover;
+}
 .list-group-item {
   line-height: 2.5;
 }
@@ -6,6 +12,7 @@
 body{
   background: #e0e0e0;
   height: 100%;
+  margin: 0
 }
 
 html{
@@ -60,10 +67,4 @@ nav{
   /* The height is 400 pixels */
   width: 100%;
   /* The width is the width of the web page */
-}
-
-body {
-  background-image: url("../images/background.jpg");
-  background-attachment: fixed;
-  background-size: 100%;
 }

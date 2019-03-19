@@ -5,12 +5,6 @@ function initMap() {
     lat: 39.9202695,
     lng: -105.089402
   };
-  // The map, centered at Broomfield
-  var map = new google.maps.Map(document.getElementById("broomfieldMap"), {
-    zoom: 16,
-    center: center
-  });
-
   // The marker, positioned of stores
   var broomfield = [
     [
@@ -56,10 +50,15 @@ function initMap() {
       -105.0910642
     ]
   ];
+  // The map, centered at Broomfield
+  var map = new google.maps.Map(document.getElementById("broomfieldMap"), {
+    zoom: 16,
+    center: center
+  });
   var infowindow = new google.maps.InfoWindow({});
-  var newMarker, count;
+  var marker, count;
   for (count = 0; count < broomfield.length; count++) {
-    newMarker = new google.maps.Marker({
+    marker = new google.maps.Marker({
       position: new google.maps.LatLng(
         broomfield[count][1],
         broomfield[count][2]
@@ -68,14 +67,14 @@ function initMap() {
       title: broomfield[count][0]
     });
     google.maps.event.addListener(
-      newMarker,
+      marker,
       "click",
-      (function(newMarker, count) {
+      (function(marker, count) {
         return function() {
           infowindow.setContent(broomfield[count][0]);
-          infowindow.open(map, newMarker);
+          infowindow.open(map, marker);
         };
-      })(newMarker, count)
+      })(marker, count)
     );
   }
 }
