@@ -12,7 +12,7 @@
     </div>
     <div id="navbarMenuHeroB" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item is-active has-text-light">
+        <a class="navbar-item is-active has-text-light" href = "/">
           Home
         </a>
         <a class="navbar-item has-text-light">
@@ -114,14 +114,21 @@
 
           <!--Map Content-->
           <div class="is-hidden" id="mapContent">
-            <h1 class="title is-1" style="text-align:center;">Map Goes Here</h1>
+            <h1 class="title is-1" style="text-align:center;">Map</h1>
         <iframe src="https://www.google.com/maps/d/embed?mid=1yFge8IxuthbakfoahGxOoPkrX8cnBg_x&hl=en&z=16" width="640" height="480"></iframe>
         {{!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1wpmzAx9dbq0iS8Q50J1y6sHJp1EA0auE&z=16" width="640" height="480"></iframe> --}}
           </div>
 
           <!--Reward Content-->
           <div class="is-hidden" id="rewardsContent">
-            <h1 class="title is-1" style="text-align:center;">Show Rewards!</h1>
+             <h1 class="title is-1" style="text-align:center;">Show Rewards!</h1>
+         {{#each quest}}
+          {{#if User.questComplete}}
+          <img src = "/images/fakecoupon.jpg">
+          {{/if}}
+          {{/each}}
+        
+
           </div>
         </div>
 
