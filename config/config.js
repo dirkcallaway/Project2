@@ -10,8 +10,8 @@ module.exports = {
   test: {
     username: "root",
     password: "root",
-    database: "project2_db",
-    host: "localhost",
+    database: process.env.DB_PASS,
+    host: process.env.DB,
     dialect: "mysql",
     logging: false
   },
