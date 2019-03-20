@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cutive" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+  <nav class="navbar is-transparent">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <h5 class="title has-text-light">Local Quest</h5>
+        </a>
+        <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenuHeroB" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item is-active has-text-light">
+            Home
+          </a>
+          <a class="navbar-item has-text-light">
+            Calendar
+          </a>
+          <a class="navbar-item has-text-light">
+            FAQ
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section has-background-transparent">
+    <div class="container">
+      <div class="columns">
+
+        <div class="column has-background-white is-centered rounded-col">
+
+          <div class="container">
+            <div class="tabs is-centered is-boxed is-medium">
+              <ul>
+                <li class="is-active tab-button" id="quests">
+                  <a onClick="switchToQuests()">
+                    <span class="icon is-small"><i class="fas fa-chess-rook" aria-hidden="true"></i></span>
+                    <span>Quests</span>
+                  </a>
+                </li>
+                <li class="tab-button" id="completed">
+                  <a onClick="switchToCompleted()">
+                    <span class="icon is-small"><i class="far fa-check-circle" aria-hidden="true"></i></span>
+                    <span>Completed</span>
+                  </a>
+                </li>
+                <li class="tab-button" id="map">
+                  <a onClick="switchToMap()">
+                    <span class="icon is-small"><i class="fas fa-map-marked" aria-hidden="true"></i></span>
+                    <span>Map</span>
+                  </a>
+                </li>
+                <li class="tab-button" id="rewards">
+                  <a onClick="switchToRewards()">
+                    <span class="icon is-small"><i class="fas fa-award" aria-hidden="true"></i></span>
+                    <span>Rewards</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="container mt-4">
+            <div id="questsContent">
+              <!--This code is repeated to create multipl quests-->
+              <div class="tile is-ancestor">
+                <div class="tile is-parent is-12">
+                  <div class="tile is-child box has-background-info">
+                    <h1 class="title is-1" style="text-align:center;">Do this Quest!</h1>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="is-hidden" id="completedContent">
+              <div class="tile is-ancestor">
+                <div class="tile is-parent is-12">
+                  <div class="tile is-child box has-background-danger">
+                    <h1 class="title is-1" style="text-align:center;">Completed Quests</h1>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="is-hidden" id="mapContent">
+              <h1 class="title is-1" style="text-align:center;">Map Goes Here</h1>
+            </div>
+            <div class="is-hidden" id="rewardsContent">
+              <h1 class="title is-1" style="text-align:center;">Show Rewards!</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</body>
+
+<script>
+  $(".login-button").on("click", function () {
+    $("#login-modal").addClass("is-active");
+    $("#signup-modal").removeClass("is-active");
+  })
+
+  $(".signup-button").on("click", function () {
+    $("#signup-modal").addClass("is-active");
+    $("#login-modal").removeClass("is-active");
+  })
+
+  $(".delete, .modal-background").on("click", function () {
+    $("#login-modal, #signup-modal").removeClass("is-active");
+  })
+
+
+  function removeActive() {
+    $("li").each(function () {
+      $(this).removeClass("is-active");
+    });
+  }
+
+  function hideAll() {
+    $("#questsContent").addClass("is-hidden");
+    $("#completedContent").addClass("is-hidden");
+    $("#mapContent").addClass("is-hidden");
+    $("#rewardsContent").addClass("is-hidden");
+  }
+
+  function switchToQuests() {
+    removeActive();
+    hideAll();
+    $("#quests").addClass("is-active");
+    $("#questsContent").removeClass("is-hidden");
+  }
+
+  function switchToCompleted() {
+    removeActive();
+    hideAll();
+    $("#completed").addClass("is-active");
+    $("#completedContent").removeClass("is-hidden");
+  }
+
+  function switchToMap() {
+    removeActive();
+    hideAll();
+    $("#map").addClass("is-active");
+    $("#mapContent").removeClass("is-hidden");
+  }
+
+  function switchToRewards() {
+    removeActive();
+    hideAll();
+    $("#rewards").addClass("is-active");
+    $("#rewardsContent").removeClass("is-hidden");
+  }
+</script>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cutive" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+  <div class="main-box">
+
+    <section class="hero has-text-white">
+      <div class="hero-head">
+        <nav class="navbar is-transparent">
+          <div class="container">
+            <div class="navbar-brand">
+              <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroB" class="navbar-menu">
+              <div class="navbar-end">
+                <a class="navbar-item has-text-white" href="/">
+                  Home
+                </a>
+                <a class="navbar-item has-text-white">
+                  Calendar
+                </a>
+                <a class="navbar-item has-text-white" href="/FAQ">
+                  FAQ
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="hero-body">
+        <div class="container">
+          <p class="title has-text-white">
+            Local Quest
+          </p>
+          <br>
+          <p class="subtitle has-text-white">
+            Complete challenges by shopping at local businesses. <br>
+            Finish all challenges to complete the weekly quest.<br>
+            Earn quest rewards at places you love.<br>
+            Shop Local. Complete Quests. Earn Rewards.
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-foot">
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="button is-medium is-primary login-button">
+              <span class="icon is-medium">
+                <i class="fas fa-user-astronaut"></i>
+              </span>
+              <span>Login</span>
+            </a>
+          </p>
+          <p class="control">
+            <a class="button is-medium is-info signup-button">
+              <span class="icon is-medium">
+                <i class="fas fa-sign-in-alt"></i>
+              </span>
+              <span>Sign Up</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--Login Modal-->
+    <div class="modal" id="login-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Login</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+          <div class="field">
+            <label class="label">Username</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Enter Username">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="password" placeholder="Enter Password">
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <button class="button is-link" id="login">Login</button>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <div class="container inline-block">
+            <button class="button is-success is-small is-pulled-right signup-button">Sign Up </button>
+            <p class="is-pulled-right">Don't have an account?</p>
+
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!--Sign Up Modal-->
+    <div class="modal" id="signup-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Join Local Quest</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+          <div class="field">
+            <label class="label">Username</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Enter Username">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="password" placeholder="Enter Password">
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Confirm Password</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="password" placeholder="Re-enter Password">
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <button class="button is-link" id="signup">Sign Up</button>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <div class="container inline-block">
+            <button class="button is-success is-small is-pulled-right login-button">Login </button>
+            <p class="is-pulled-right">Already have an account?</p>
+
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </div>
+</body>
+
+<script>
+  $(".login-button").on("click", function () {
+    $("#login-modal").addClass("is-active");
+    $("#signup-modal").removeClass("is-active");
+  })
+
+  $(".signup-button").on("click", function () {
+    $("#signup-modal").addClass("is-active");
+    $("#login-modal").removeClass("is-active");
+  })
+
+  $(".delete, .modal-background").on("click", function () {
+    $("#login-modal, #signup-modal").removeClass("is-active");
+  })
+</script>
+
+</html>
