@@ -34,7 +34,7 @@ $(".createForm").on("submit", function(event) {
         // Reload the page to get the updated list
         // location.reload();
         console.log(data);
-        location.reload();
+        location.replace("/profile");
       });
     })
     .catch(function(err) {
