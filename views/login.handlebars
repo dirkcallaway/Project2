@@ -1,104 +1,218 @@
-<!--Short Description Row-->
+<div class="main-box">
 
+  <section class="hero has-text-white">
+    <div class="hero-head">
+      <nav class="navbar is-transparent">
+        <div class="container">
+          <div class="navbar-brand">
+            <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroB" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item has-text-white" href="/">
+                Home
+              </a>
+              <a class="navbar-item has-text-white">
+                Calendar
+              </a>
+              <a class="navbar-item has-text-white" href="/FAQ">
+                FAQ
+              </a>
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link has-text-white">
+                  Delete User
+                  <!--Put HBS Logic for Username Here-->
+                </a>
+                
+                <div class="navbar-dropdown">
+                  {{#each User}}
+                  <a class="navbar-item deleteButton" id="deleteButton" data-id="{{id}}">
+                    {{UserName}}
+                  </a>
+                  {{/each}}
+                </div>
+                
+              </div>
 
-<div class="dropdown">
-  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   Delete User
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    {{#each User}}
-    <a class="dropdown-item delete" data-id = "{{id}}">{{UserName}}</a>
-    {{/each}}
-  </div>
-</div>
-<br>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
 
-<div class="row">
-  <div class="col-md text-center">
-    <h3 style = "color:azure;">Shop Local. Complete Quests. Earn Rewards.</h3>
-  </div>
-</div>
+    <div class="hero-body">
+      <div class="container">
+        <p class="title has-text-white">
+          Local Quest
+        </p>
+        <br>
+        <p class="subtitle has-text-white">
+          Complete challenges by shopping at local businesses. <br>
+          Finish all challenges to complete the weekly quest.<br>
+          Earn quest rewards at places you love.<br>
+          Shop Local. Complete Quests. Earn Rewards.
+        </p>
+      </div>
+    </div>
 
-<!--Login Signup Links-->
+    <div class="hero-foot">
 
-<div class="row mt-5">
-  <div class="col-md-1 offset-5">
-    <button type="button" class="btn btn-primary login">Login</button>
-  </div>
-  <div class="col-md-2">
-    <button type="button" class="btn btn-success signup">Sign Up</button>
-  </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="field is-grouped">
+        <p class="control">
+          <a class="button is-medium is-primary login-button">
+            <span class="icon is-medium">
+              <i class="fas fa-user-astronaut"></i>
+            </span>
+            <span>Login</span>
+          </a>
+        </p>
+        <p class="control">
+          <a class="button is-medium is-info signup-button">
+            <span class="icon is-medium">
+              <i class="fas fa-sign-in-alt"></i>
+            </span>
+            <span>Sign Up</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
 </div>
 
 <!--Login Modal-->
-<div class="modal" tabindex="-1" role="dialog" id="login-modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Login</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action = "/profile" method="POST">
-          <div class="form-group">
-            <label for="username">User Name</label>
-            <input type="email" name="username" class="form-control" id="UserName" placeholder="Enter username">
+<div class="modal" id="login-modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Login</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+      <form action="/profile" method="POST">
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" name="username" placeholder="Enter Username">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+        </div>
+
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="password" name="password" placeholder="Enter Password">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
           </div>
-          <button type="submit"  class="btn btn-primary userLogin">Login</button>
-        </form>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <button class="button is-link" id="login">Login</button>
+          </div>
+        </div>
+      </form>
+    </section>
+    <footer class="modal-card-foot">
+      <div class="container inline-block">
+        <button class="button is-success is-small is-pulled-right signup-button">Sign Up </button>
+        <p class="is-pulled-right">Don't have an account?</p>
+
       </div>
-      <div class="modal-footer">
-        <p>Don't have an account?</p>
-        <button type="button" class="btn btn-success signup mt-3">Sign Up</button>
-      </div>
-    </div>
+    </footer>
   </div>
 </div>
 
 <!--Sign Up Modal-->
-<div class="modal" tabindex="-1" role="dialog" id="signup-modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Sign Up</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        {{!-- action = action = "/createusers" method="POST"--}}
-          <form class ="createForm"  action = "/profile">
-          <div class="form-group">
-            <label for="username">User Name</label>
-            <input type="username" name = "username" class="form-control" id="Firstusername" placeholder="Enter username">
+<div class="modal" id="signup-modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Join Local Quest</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+      <form class="createForm">
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control has-icons-left has-icons-right">
+            <input id="Firstusername" class="input" type="text" placeholder="Enter Username">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name = "password"class="form-control" id="Firstpassword" placeholder="Password">
+        </div>
+
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control has-icons-left has-icons-right">
+            <input id="Firstpassword" class="input" type="password" placeholder="Enter Password">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
           </div>
-          <div class="form-group">
-            <label for="password-verify">Password</label>
-            <input type="password" class="form-control" id="password-verify" placeholder="Verify Password">
+        </div>
+
+        <div class="field">
+          <label class="label">Confirm Password</label>
+          <div class="control has-icons-left has-icons-right">
+            <input id="password-verify" class="input" type="password" placeholder="Re-enter Password">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
           </div>
-          <select class="form-control" id = "FirstLocation">
-            <option name="Fort Collins" value = "Fort Collins">Fort Collins</option>
-            <option name= "Broomfield" value = "Broomfield">Broomfield</option>
+        </div>
+
+        <div class="select">
+          <select id="FirstLocation">
+            <option name="Fort Collins" value="Fort Collins">Fort Collins</option>
+            <option name="Broomfield" value="Broomfield">Broomfield</option>
           </select>
-          <button type= "submit" class="btn btn-primary mt-3" id = "firstlogin">Login</button>
-        </form>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <button class="button is-link" id="signup">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </section>
+    <footer class="modal-card-foot">
+      <div class="container inline-block">
+        <button class="button is-success is-small is-pulled-right login-button">Login </button>
+        <p class="is-pulled-right">Already have an account?</p>
+
       </div>
-      <div class="modal-footer">
-        <p>Already have an account?</p>
-        <button type="button" class="btn btn-warning login">Login</button>
-      </div>
-    </div>
+    </footer>
   </div>
 </div>
-
-
