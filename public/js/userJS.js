@@ -59,20 +59,6 @@ $(".complete").on("click", function() {
     location.reload();
   });
 });
-
-$(".delete").on("click", function() {
-  var id = $(this).data("id");
-
-  // Send the DELETE request.
-  $.ajax("/api/user/" + id, {
-    type: "DELETE"
-  }).then(function() {
-    console.log("deleted burger", id);
-    // Reload the page to get the updated list
-    location.reload();
-  });
-});
-
 // $(".userLogin").on("click", function() {
 //   var UserName = $(this).data("UserName");
 //   $.ajax("/profile/" + UserName, {
@@ -81,6 +67,19 @@ $(".delete").on("click", function() {
 //     console.log(data);
 //   });
 // });
+
+$(".deleteButton").on("click", function() {
+  var id = $(this).data("id");
+  console.log("Delete Button Pushed!");
+  // Send the DELETE request.
+  $.ajax("/api/user/" + id, {
+    type: "DELETE"
+  }).then(function() {
+    console.log("deleted user", id);
+    // Reload the page to get the updated list
+    location.reload();
+  });
+});
 
 $(".login").on("click", function() {
   $("#signup-modal").modal("hide");
