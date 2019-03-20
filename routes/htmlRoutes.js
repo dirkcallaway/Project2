@@ -26,6 +26,7 @@ module.exports = function(app) {
           //if password matches it pulls the users quests
           console.log("Inside func pass:" + password);
           db.Quest.findAll({
+            include: [db.User],
             where: { UserId: data.id }
           }).then(function(data) {
             var hbsobj = {
