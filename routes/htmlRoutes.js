@@ -50,7 +50,8 @@ module.exports = function(app) {
               data[0].dataValues.User.dataValues.questComplete;
             var hbsobj = {
               quest: data,
-              complete: completedQuest
+              complete: completedQuest,
+              location: userLocation
             };
             console.log(data[0].dataValues.User.dataValues.questComplete);
             res.render("profile", hbsobj);
