@@ -14,7 +14,7 @@
     </div>
     <div id="navbarMenuHeroB" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item is-active has-text-light" href = "/">
+        <a class="navbar-item is-active has-text-light" href="/">
           Home
         </a>
         <a class="navbar-item has-text-light">
@@ -26,7 +26,8 @@
 
         {{!-- <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            User Name <!--Put HBS Logic for Username Here-->
+            User Name
+            <!--Put HBS Logic for Username Here-->
           </a>
 
           <div class="navbar-dropdown">
@@ -117,12 +118,31 @@
           <!--Map Content-->
           <div class="is-hidden" id="mapContent">
             <h1 class="title is-1" style="text-align:center;">Map</h1>
+<<<<<<< HEAD
+            <iframe src="https://www.google.com/maps/d/embed?mid=1yFge8IxuthbakfoahGxOoPkrX8cnBg_x&hl=en&z=16" width="640"
+              height="480"></iframe>
+            {{!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1wpmzAx9dbq0iS8Q50J1y6sHJp1EA0auE&z=16"
+              width="640" height="480"></iframe> --}}
+=======
        {{!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1yFge8IxuthbakfoahGxOoPkrX8cnBg_x&z=16" width="640" height="480"></iframe> --}}
         <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1wpmzAx9dbq0iS8Q50J1y6sHJp1EA0auE&z=16" width="640" height="480"></iframe>
+>>>>>>> master
           </div>
 
           <!--Reward Content-->
           <div class="is-hidden" id="rewardsContent">
+<<<<<<< HEAD
+            <div class="container">
+              {{#if complete}}
+              <figure class="image is-128x128">
+                <img src="/images/couponCode.png">
+              </figure>
+              {{else}}
+              <h5>{{complete}}</h5>
+              <h2 class="title is-1" style="text-align:center;">Finish all your quests to earn your reward!</h2>
+              {{/if}}
+            </div>
+=======
              <h1 class="title is-1" style="text-align:center;">Show Rewards!</h1>
          {{#each quest}}
           {{#if User.questComplete}}
@@ -131,6 +151,7 @@
           {{/each}}
 
 
+>>>>>>> master
           </div>
         </div>
 
