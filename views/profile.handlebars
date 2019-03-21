@@ -23,19 +23,6 @@
         <a class="navbar-item has-text-light">
           FAQ
         </a>
-
-        {{!-- <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            User Name
-            <!--Put HBS Logic for Username Here-->
-          </a>
-
-          <div class="navbar-dropdown">
-            <a class="navbar-item delete">
-              Delete Account
-            </a>
-          </div>
-        </div> --}}
       </div>
     </div>
   </div>
@@ -128,7 +115,7 @@
           <!--Reward Content-->
           <div class="is-hidden" id="rewardsContent">
             <div class="container">
-              
+
               {{#each quest}}
               {{#if completed}}
               <div class="tile is-ancestor">
@@ -145,14 +132,6 @@
                 </div>
               {{/if}}
               {{/each}}
-              {{!-- {{#if complete}}
-              <figure class="image is-128x128">
-                <img src="/images/couponCode.png">
-              </figure>
-              {{else}}
-              <h5>{{complete}}</h5>
-              <h2 class="title is-1" style="text-align:center;">Finish all your quests to earn your reward!</h2>
-              {{/if}} --}}
             </div>
           </div>
         </div>
