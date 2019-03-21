@@ -6,7 +6,8 @@ module.exports = function(sequelize, DataTypes) {
     completed: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
-    }
+    },
+    rewardDescribe: DataTypes.TEXT
   });
   Quest.associate = function(models) {
     // We're saying that a Post should belong to an Author
