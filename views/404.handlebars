@@ -1,8 +1,53 @@
-<div class="container">
-  <div class="jumbotron mt-4">
-    <h1 class="display-4 text-center">404 Not Found
-      <span role="img" aria-label="Face with rolling eyes">🙄</span>
-    </h1>
-    <a href="/">← Back To Home</a>
+<nav class="navbar is-transparent">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <h5 class="title has-text-light">Local Quest</h5>
+      </a>
+      <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+    <div id="navbarMenuHeroB" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item is-active has-text-light" href="/">
+          Home
+        </a>
+        <a class="navbar-item has-text-light">
+          Calendar
+        </a>
+        <a class="navbar-item has-text-light">
+          FAQ
+        </a>
+
+        {{!-- <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            User Name
+            <!--Put HBS Logic for Username Here-->
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item delete">
+              Delete Account
+            </a>
+          </div>
+        </div> --}}
+      </div>
+    </div>
   </div>
-</div>
+</nav>
+
+<section class="hero is-danger">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Page Not Found!
+      </h1>
+      <h2 class="subtitle">
+        That's a 404.  Come back later and perhaps we'll have made the page by then...
+      </h2>
+    </div>
+  </div>
+</section>
