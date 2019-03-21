@@ -11,6 +11,10 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/faq", function(req, res) {
+    res.render("faq");
+  });
+
   app.post("/profile", function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
