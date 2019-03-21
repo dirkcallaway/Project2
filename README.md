@@ -1,52 +1,41 @@
-# Adult Pokemon (Name Change Later)
+# Quest Hunt
 
-## Plan
-Users will be given weekly "Quests" that require them to visit, purchase, or interact with a local spot in some way.  The goal is to advertise local places.  
-If users complete all the quests for the week, they will be rewarded with a badge and a coupon, discount, or some other reward.
+[Home Page](.public/images/log-in.png)
 
-## Technology
-* Node.js
-* Express
-* JavaScript
-* Google Maps
-* HTML
-* CSS
-* MySQL
-* Sequelize
-* Calendar (if time)
-* Moment.js (if calendar)
-* React (?)
+## Ready
 
-# Local Quest Presentation
+* Create log-in information if this is your first "Quest Hunt"
 
-## Structure
+[Set-up account](.public/images/create-log-in.png)
 
-1. What problem does your app focus on.
-  * Getting shoppers to local businesses.
-2. How does your app solve this problem at a high-level.
-  * Local Quest promotes local businesses through a fun quest based system to get shoppers in the door.  Rewarding shopping at local places with coupons (and in future release badges), shopper have fun while supporting their local neighborhood.  All done in a beautiful UI.
-3. What steps did you take to build the app.
-  * Built HTML frame with Bootstrap
-  * Created Models in Sequelize
-  * Created routes for API and HTML
-  * Linked buttons to Sequelize DB
-  * Added Google Maps functionality
-  * Seeded DB with Quest and Rewards data
-  * Updated UI with Bulma
-4. Show the app running and solving the problem that began your story. Also talk about what features you'd like to add in an update to your app.
-> Future Updates
-  * Badge System
-  * Google Sign In
-  * Google Calendar
-  * Actual Coupons/Quests
+[Log into account](.public/images/have-log-in.png)
 
-## Presentation
+* Once you are an official "Quest Hunter" decide which quest you would like to complete
 
-* What problem does your app focus on.
-  * Shelby
-* How does your app solve this problem at a high-level.
-  * Shelby
-* What steps did you take to build the app.
-  * Matt
-* Show the app running and solving the problem that began your story. Also talk about what features you'd like to add in an update to your app.
-  * Melissa
+[Open Quests](.public/images/notCompleted.png)
+
+* Select  `Maps` for location of each "Quest Hunt"
+
+[Map](.public/images/map-demo.png)
+
+* Select a place on the map for more information about the "Quest Hunt"
+
+[Additional Map Information](.public/images/map-with-info.png)
+
+* Submit your proof COMING SOON
+
+* Once you have completed your "Quest Hunt" select the GREEN `Completed!`
+* Need to know how close you are to obtaining the "REWARD" select `Completed!` tab
+
+[Completed Quests](.public/images/completed-quests.png)
+
+* Once your done Hunting select the  `Rewards!`
+
+## OUR MISSION
+
+* Create stress free fun for all ages while promoting local businesses.
+
+* "Quest Hunter" promotes local businesses through a fun quest based system.  "Quest Hunter" allows locals/visitors an opportunity to discover what their community offers.
+* "Quest Hunter" rewards shoppers with local discounts while having fun (COMING SOON  release badges)
+
+## HAPPY HUNTING
