@@ -17,9 +17,9 @@
         <a class="navbar-item is-active has-text-light" href="/">
           Home
         </a>
-        <a class="navbar-item has-text-light">
+        {{!-- <a class="navbar-item has-text-light">
           Calendar
-        </a>
+        </a> --}}
         <a class="navbar-item has-text-light">
           FAQ
         </a>
@@ -132,12 +132,12 @@
               {{#each quest}}
               {{#if completed}}
               <div class="tile is-ancestor">
-              <div class="tile is-parent is-6">
-                <div class="tile is-child box has-background-primary" id='completedChallenge{{id}}'>
-                  <h4 class="title is-size-4" style="text-align:center;">Reward for: {{questName}}</h4>
+              <div class="tile is-parent is-12">
+                <div class="tile is-child box has-background-primary has-text-centered" id='completedChallenge{{id}}'>
+                  <h4 class="title is-size-3" style="text-align:center;">Reward for: {{questName}}</h4>
                   <hr>
-                  <p class="title is-size-4" style="text-align:center;">{{rewardDescribe}}</p>
-                 <figure class="image is-128x128 is-centered">
+                  <p class="subtitle is-size-4" style="text-align:center;">{{rewardDescribe}}</p>
+                 <figure class="image is-128x128 is-inline-block">
                 <img src="/images/couponCode.png">
                  </figure>
                 </div>
