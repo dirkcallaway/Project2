@@ -46,12 +46,17 @@ module.exports = function(app) {
                 console.log("User completed the quests!" + data.length);
               }
             });
+            var mapLocation = data[0].dataValues.User.dataValues.Location;
+            var location = false;
+            if (mapLocation === "Fort Collins") {
+              location = true;
+            }
             var completedQuest =
               data[0].dataValues.User.dataValues.questComplete;
             var hbsobj = {
               quest: data,
               complete: completedQuest,
-              location: userLocation
+              location: location
             };
             console.log(data[0].dataValues.User.dataValues.questComplete);
             res.render("profile", hbsobj);
