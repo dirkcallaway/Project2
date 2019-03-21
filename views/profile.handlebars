@@ -1,3 +1,5 @@
+
+<div class="bg">
 <nav class="navbar is-transparent">
   <div class="container">
     <div class="navbar-brand">
@@ -116,14 +118,20 @@
           <!--Map Content-->
           <div class="is-hidden" id="mapContent">
             <h1 class="title is-1" style="text-align:center;">Map</h1>
+<<<<<<< HEAD
             <iframe src="https://www.google.com/maps/d/embed?mid=1yFge8IxuthbakfoahGxOoPkrX8cnBg_x&hl=en&z=16" width="640"
               height="480"></iframe>
             {{!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1wpmzAx9dbq0iS8Q50J1y6sHJp1EA0auE&z=16"
               width="640" height="480"></iframe> --}}
+=======
+       {{!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1yFge8IxuthbakfoahGxOoPkrX8cnBg_x&z=16" width="640" height="480"></iframe> --}}
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1wpmzAx9dbq0iS8Q50J1y6sHJp1EA0auE&z=16" width="640" height="480"></iframe>
+>>>>>>> master
           </div>
 
           <!--Reward Content-->
           <div class="is-hidden" id="rewardsContent">
+<<<<<<< HEAD
             <div class="container">
               {{#if complete}}
               <figure class="image is-128x128">
@@ -134,6 +142,16 @@
               <h2 class="title is-1" style="text-align:center;">Finish all your quests to earn your reward!</h2>
               {{/if}}
             </div>
+=======
+             <h1 class="title is-1" style="text-align:center;">Show Rewards!</h1>
+         {{#each quest}}
+          {{#if User.questComplete}}
+          <img src = "/images/fakecoupon.jpg">
+          {{/if}}
+          {{/each}}
+
+
+>>>>>>> master
           </div>
         </div>
 
@@ -141,3 +159,4 @@
     </div>
   </div>
 </section>
+</div>
