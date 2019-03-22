@@ -1,6 +1,6 @@
 # Quest Hunt
 
-[Home Page](./public/images/log-in.png)
+![Home Page](./public/images/log-in.png)
 
 ## Ready
 
